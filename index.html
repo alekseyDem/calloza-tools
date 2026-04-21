@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert words to phone keypad numbers and find vanity number words. Free online tool — no sign-up required.">
+  <meta name="author" content="Calloza">
+  <meta name="keywords" content="phone word converter, vanity number, phone keypad, word to number, T9, phoneword">
+  <title>Phone Word Converter — Vanity Number Lookup</title>
+
+  <meta property="og:title" content="Phone Word Converter — Vanity Number Lookup">
+  <meta property="og:description" content="Convert words to phone keypad numbers and find vanity number words. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://calloza.github.io/phone-word-converter/">
+
+  <link rel="canonical" href="https://calloza.github.io/phone-word-converter/">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Phone Word Converter</h1>
+      <p>Convert between words and phone keypad numbers</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist">
+        <button class="tab-btn active" data-tab="panel-word" role="tab" aria-selected="true">
+          Word &rarr; Number
+        </button>
+        <button class="tab-btn" data-tab="panel-number" role="tab" aria-selected="false">
+          Number &rarr; Words
+        </button>
+      </div>
+
+      <!-- Word → Number -->
+      <div id="panel-word" class="panel active" role="tabpanel">
+        <div class="input-group">
+          <label for="word-input">Enter a word or phrase</label>
+          <div class="input-wrap">
+            <input
+              type="text"
+              id="word-input"
+              placeholder="e.g. FLOWERS"
+              autocomplete="off"
+              spellcheck="false"
+            >
+            <button class="clear-btn" data-for="word-input" type="button" aria-label="Clear">&times;</button>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-header">
+            <div class="result-label">Phone number</div>
+            <button class="share-btn" id="share-word" type="button">Share</button>
+          </div>
+          <div class="result-value" id="number-result"></div>
+        </div>
+
+      </div>
+
+      <!-- Number → Words -->
+      <div id="panel-number" class="panel" role="tabpanel">
+        <div class="input-group">
+          <label for="digit-input">Enter a phone number</label>
+          <div class="input-wrap">
+            <input
+              type="text"
+              id="digit-input"
+              placeholder="e.g. 228 or 12665"
+              inputmode="numeric"
+              autocomplete="off"
+              maxlength="10"
+            >
+            <button class="clear-btn" data-for="digit-input" type="button" aria-label="Clear">&times;</button>
+          </div>
+        </div>
+
+        <div class="result">
+          <div class="result-header">
+            <div class="result-label">Matching words</div>
+            <button class="share-btn" id="share-digit" type="button">Share</button>
+          </div>
+          <p id="word-count"></p>
+          <ul class="word-list" id="word-list"></ul>
+        </div>
+      </div>
+
+      <!-- Keypad (shared, always visible) -->
+      <div class="keypad">
+        <div class="key" data-digit="1">
+          <span class="key-digit">1</span>
+          <span class="key-letters">&nbsp;</span>
+        </div>
+        <div class="key" data-digit="2">
+          <span class="key-digit">2</span>
+          <span class="key-letters">ABC</span>
+        </div>
+        <div class="key" data-digit="3">
+          <span class="key-digit">3</span>
+          <span class="key-letters">DEF</span>
+        </div>
+        <div class="key" data-digit="4">
+          <span class="key-digit">4</span>
+          <span class="key-letters">GHI</span>
+        </div>
+        <div class="key" data-digit="5">
+          <span class="key-digit">5</span>
+          <span class="key-letters">JKL</span>
+        </div>
+        <div class="key" data-digit="6">
+          <span class="key-digit">6</span>
+          <span class="key-letters">MNO</span>
+        </div>
+        <div class="key" data-digit="7">
+          <span class="key-digit">7</span>
+          <span class="key-letters">PQRS</span>
+        </div>
+        <div class="key" data-digit="8">
+          <span class="key-digit">8</span>
+          <span class="key-letters">TUV</span>
+        </div>
+        <div class="key" data-digit="9">
+          <span class="key-digit">9</span>
+          <span class="key-letters">WXYZ</span>
+        </div>
+        <div class="key">
+          <span class="key-digit">*</span>
+          <span class="key-letters">&nbsp;</span>
+        </div>
+        <div class="key" data-digit="0">
+          <span class="key-digit">0</span>
+          <span class="key-letters">+</span>
+        </div>
+        <div class="key">
+          <span class="key-digit">#</span>
+          <span class="key-letters">&nbsp;</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Built by <a href="https://calloza.com" target="_blank" rel="noopener">Calloza</a>
+      &mdash; international calls from your browser
+    </div>
+  </footer>
+
+  <script src="js/converter.js"></script>
+  <script src="js/dictionary.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
