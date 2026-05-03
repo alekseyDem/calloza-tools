@@ -2,7 +2,7 @@
 
 Convert between words and phone keypad numbers. Find vanity numbers instantly.
 
-**[Try it live](https://alekseydem.github.io/calloza-tools/)**
+**[Try it live](https://www.calloza.com/tools/phone-word-converter)**
 
 ## What it does
 
